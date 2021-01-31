@@ -2,7 +2,7 @@ This repository contains the solution for the UTU code test. After downloading (
 
 # Setting up the MongoDB database
 Step 1: Install MongoDB using https://docs.mongodb.com/manual/administration/install-community/ <br/>
-Step 2: Open a Command Line Interface (Terminal on a Mac, Command Prompt on Windows) from the folder which contains the data.csv file. <br/>
+Step 2: Open a Command Line Interface or a CLI (Terminal on a Mac, Command Prompt on Windows) from the folder which contains the data.csv file. <br/>
 Step 3: Import the data.csv file using the following code.
 ```mongo
 mongoimport --db utu --collection records --type csv --headerline --file data.csv
