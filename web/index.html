@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Cryptocurrency Explorer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/95d795fabf.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./app.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+  <div ng-app="app" ng-controller="IndexController" class="container">
+    <div class="input-area">
+      <h1 class="title">
+        Cryptocurrency Prices by Market Cap
+      </h1>
+      <label style="font-size:20px;">As at: {{date}}</label> <br>
+    </div>
+
+
+    <div class="table">
+      <table class="col-sm-12">
+        <tr class="row header">
+          <th class="col-sm-1">#</th>
+          <th class="col-sm-2" style="text-align:left;">Coin</th>
+          <th class="col-sm-1">Abbreviation</th>
+          <th class="col-sm-1 right">Price (USD)</th>
+          <th class="col-sm-1 right">24h</th>
+          <th class="col-sm-1 right">7d</th>
+          <th class="col-sm-1 right">30d</th>
+          <th class="col-sm-2 right">24h Volume <br/>(USD)</th>
+          <th class="col-sm-2 right">Market Cap <br/>(USD)</th>
+        </tr>
+
+        <tr class="row tab" ng-repeat="c in currentData | orderBy:'-marketCap'">
+          <td class="col-sm-1 number">{{$index + 1}}</td>
+          <td class="col-sm-2 coin"><img src="./assets/{{c.currencyAbbr}}.png" class="logo" /> {{c.currency}}</td>
+          <td class="col-sm-1 abbreviation">{{c.currencyAbbr}}</td>
+          <td class="col-sm-1 price right">{{c.price | number : 2}}</td>
+          <td class="col-sm-1 daily right" ng-style="{'color' : (c.weekly >= 0) ? 'green' : '#b30000'}">{{c.daily | number : 2}}%</td>
+          <td class="col-sm-1 weekly right" ng-style="{'color' : (c.weekly >= 0) ? 'green' : '#b30000'}">{{c.weekly | number : 2}}%</td>
+          <td class="col-sm-1 monthly right" ng-style="{'color' : (c.monthly >= 0) ? 'green' : '#b30000'}">{{c.monthly | number : 2}}%</td>
+          <td class="col-sm-2 volume right">{{c.volume | number}}</td>
+          <td class="col-sm-2 marketCap right">{{c.marketCap | number}}</td>
+        </tr>
+
+      </table>
+    </div>
+
+</body>
+
+</html>

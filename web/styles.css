@@ -1,0 +1,65 @@
+.container{
+  padding: 20px;
+}
+
+.title{
+  font-size: 40px;
+  color: darkblue;
+  text-align: center;
+}
+
+.input-area{
+  text-align: center;
+}
+
+.table{
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+th{
+  text-align: center;
+  padding: 15px;
+}
+
+td{
+  padding:10px 5px !important;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.number{
+  color: #505050;
+}
+
+.logo{
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.coin{
+  text-align: left;
+}
+
+.header{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+.black {
+  color: #000000;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: #b30000;
+}
